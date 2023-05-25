@@ -3,7 +3,7 @@ package middleware
 import (
 	"myapp/data"
 
-	"github.com/emirkosuta/celeritas"
+	"github.com/oykos-development-hub/celeritas"
 )
 
 type Middleware struct {
