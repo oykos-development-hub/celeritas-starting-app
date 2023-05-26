@@ -8,7 +8,7 @@ build:
 
 run:
 	@echo Staring Celeritas...
-    @start /min cmd /c tmp\${BINARY_NAME} &
+    @start /min cmd /c tmp\${BINARY_NAME}
 	@echo Celeritas started!
 
 clean:

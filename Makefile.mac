@@ -8,7 +8,7 @@ build:
 
 run: build
 	@echo "Starting Celeritas..."
-	@./tmp/${BINARY_NAME} &
+	@./tmp/${BINARY_NAME}
 	@echo "Celeritas started!"
 
 clean:
