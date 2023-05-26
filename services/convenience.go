@@ -1,16 +1,18 @@
 package services
 
-import "github.com/oykos-development-hub/celeritas"
+import (
+	"github.com/oykos-development-hub/celeritas"
+)
 
-type BaseService struct {
+type BaseServiceImpl struct {
 	App *celeritas.Celeritas
 }
 
-func (s *BaseService) randomString(n int) string {
+func (s BaseServiceImpl) RandomString(n int) string {
 	return s.App.RandomString(n)
 }
 
-func (s *BaseService) encrypt(text string) (string, error) {
+func (s BaseServiceImpl) Encrypt(text string) (string, error) {
 	enc := celeritas.Encryption{Key: []byte(s.App.EncryptionKey)}
 
 	encrypted, err := enc.Encrypt(text)
@@ -20,7 +22,7 @@ func (s *BaseService) encrypt(text string) (string, error) {
 	return encrypted, nil
 }
 
-func (s *BaseService) decrypt(crypto string) (string, error) {
+func (s BaseServiceImpl) Decrypt(crypto string) (string, error) {
 	enc := celeritas.Encryption{Key: []byte(s.App.EncryptionKey)}
 
 	decrypted, err := enc.Decrypt(crypto)
