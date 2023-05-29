@@ -36,6 +36,8 @@ func MapErrorToStatusCode(err error) int {
 		return http.StatusForbidden
 	case ErrInternalServer:
 		return http.StatusInternalServerError
+	case ErrBadRequest:
+		return http.StatusBadRequest
 	default:
 		return http.StatusInternalServerError
 	}
